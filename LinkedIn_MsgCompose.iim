@@ -1,0 +1,10 @@
+﻿URL GOTO=http://www.linkedin.com/msgToConns?displayCreate=&goback=.con&trk=hb_tab_tab_cmpmsg
+TAG POS=1 TYPE=IMG ATTR=SRC:http://static.licdn.com/scds/common/u/img/icon/icon_abook_16x16.gif
+WAIT SECONDS=3
+TAG POS=1 TYPE=SELECT ATTR=ID:loc CONTENT=%ph
+WAIT SECONDS=5
+TAG POS=1 TYPE=SELECT ATTR=ID:ind CONTENT=%44
+'TAG POS=1 TYPE=SELECT ATTR=ID:ind CONTENT=%128
+'TAG POS=1 TYPE=SELECT ATTR=ID:ind CONTENT=%80
+'TAG POS=1 TYPE=SELECT ATTR=ID:ind CONTENT=%50
+WAIT SECONDS=5
