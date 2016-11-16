@@ -1,4 +1,7 @@
-﻿var rootDir = "http://www.ayosdito.ph/Philippines/Cars-for-sale-1020?o=";
+// Script to scrape e-mails and number on a specific site with iMacros extension for Firefox.
+// This script will open link pages, then scrape e-mails and numbers on that page.
+
+var rootDir = "http://www.ayosdito.ph/Philippines/Cars-for-sale-1020?o=";
 var rootDir2 = "&th=1";
 var start_page = 1;
 var max_page = 0;
@@ -72,7 +75,6 @@ function searchEmail() {
 
 	bodyText = window.content.document.body.innerHTML;
 	getEmail = bodyText.match(/([a-zA-Z0-9._%+-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
-	//getEmail = bodyText.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/gi);
     if (getEmail != null && getEmail.length > 0) {
 	
 		var prevString = "";
@@ -80,7 +82,6 @@ function searchEmail() {
 			var getString = getEmail[i];
 			
 			if (prevString.localeCompare(getString) != 0) {
-				//alert('new: ' + getString + ' prev: ' + prevString + ' compare: ' + prevString.localeCompare(getString));
 				prevString = getString;
 				iimSet('extracted', getString);
 				iimPlay('getmail_links');
@@ -104,7 +105,6 @@ function searchDigit() {
 			
 			if (newString.length == 11 && prevString.localeCompare(newString) != 0) {
 				if (newString.match(/^0813|^0817|^0905|^0906|^0907|^0908|^0909|^0910|^0912|^0915|^0916|^0917|^0918|^0919|^0920|^0921|^0922|^0923|^0925|^0926|^0927|^0928|^0929|^0930|^0932|^0933|^0934|^0935|^0936|^0937|^0938|^0939|^0942|^0943|^0946|^0947|^0948|^0949|^0973|^0974|^0977|^0979|^0989|^0994|^0996|^0997|^0998|^0999/)) {
-					//alert('new: ' + newString + ' prev: ' + prevString + ' compare: ' + prevString.localeCompare(newString));
 					prevString = newString;
 					iimSet('extracted', newString);
 					iimPlay('getnum_links');
